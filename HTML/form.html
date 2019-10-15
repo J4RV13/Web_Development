@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JIHM's WebSite</title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
+  <body>
+
+    <!-- get的用法 -->
+    <form action="/login.php"> <!-- 後端接收資訊的網頁 -->
+        Username:<br>
+        <input type="text" name="username"><br>
+        Password:<br>
+        <input type="password" name="password"><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br>
+        <input type="checkbox" name="savePassword" value="saved"> I need save my password.
+        <br>
+        <textarea name="message" rows="10"  cols="40"></textarea>
+        <br>
+        <select name="option">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br>
+        <input type="date" name="day" max="1995-12-30"> <!-- 有些瀏覽器沒有支援某些tag --> <!-- date->月日都要是兩位數 1995-06-30 -->
+
+
+        <br>
+        <input type="submit" value="提 交">
+
+    </form>
+
+
+    <br><br><br><br>
+
+  </body>
+</html>

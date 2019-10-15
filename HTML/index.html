@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html>
   <head>
     <title>JIHM's WebSite</title>
 
     <meta charset="utf-8"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+      table, td, th{
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+    </style>
+    <!-- 框線大小(border)、框線顏色(solid) -->
+    <!-- 變成一層邊框(border-collapse) -->
   </head>
   <body>
 
@@ -51,6 +59,112 @@
     <img src="myImage.jpg" width="250px" height="100px">
     <img src="myImage1.jpg" width="250px" height="100px" alt="My Image">
     <hr>
+
+    <table>
+      <tr>
+          <th>Name</th>
+          <th>Age</th>
+      </tr>
+      <tr>
+          <td>Tom</td>
+          <td>24</td>
+      </tr>
+      <tr>
+          <td>Jack</td>
+          <td>28</td>
+      </tr>
+    </table>
+
+    <br><br>
+
+    <table>
+      <tr>
+       <th>Name</th>
+       <th colspan="2">Telephone Number</th>
+      </tr>
+
+      <tr>
+        <td>Bill</td>
+        <td>1223</td>
+        <td>8765</td>
+      </tr>
+    </table>
+
+    <br><br>
+
+    <table>
+      <caption>Customer Telephone Number</caption>
+        <tr>
+         <th>Name</th>
+         <td>Bill</td>
+        </tr>
+
+        <tr>
+          <th rowspan="2">Telephone Number</th>
+          <td>1223</td>
+        </tr>
+        <tr>
+          <td>8765</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <!-- ul不需要排序時使用 -->
+    <ul>
+      <li>Tom</li>
+      <li>Jack</li>
+      <li>Bill</li>
+    </ul>
+
+    <br><br>
+    <ol type="I">
+        <li>Tom</li>
+        <li>Jack</li>
+        <li>Bill</li>
+    </ol>
+    <ol type="1">
+        <li>Tom</li>
+        <li>Jack</li>
+        <li>Bill</li>
+    </ol>
+    <ol type="A">
+        <li>Tom</li>
+        <li>Jack</li>
+        <li>Bill</li>
+    </ol>
+    <ol type="i">
+        <li>Tom</li>
+        <li>Jack</li>
+        <li>Bill</li>
+    </ol>
+    <ol type="i">
+        <li>Tom</li>
+        <li>Jack
+          <ul>
+            <li>24</li>
+            <li>1.83</li>
+          </ul>
+        </li>
+        <li>Bill</li>
+    </ol>
+    <ol start="55">
+        <li>Tom</li>
+        <li>Jack</li>
+        <li>Bill</li>
+    </ol>
+    <br><br>
+
+    <dl>
+      <dt>Tom</dt>
+      <dd>He is a nice guy.</dd>
+    </dl>
+
+    <br><br>
+
+    <iframe src="https://www.youtube.com/embed/MmljvssFEtE" width="500" height="300" style="border: none;"></iframe>
+    <br><br><br><br>
+
 
   </body>
 </html>
