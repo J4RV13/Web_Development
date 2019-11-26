@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <!-- zh-Hans zh-Hant-TW -->
+<head>
+    <title>Jack's Webpage</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      table, th, td {  /* 內部css */
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      #headerTitle {
+          color: red;
+      }
+      .blueColor {
+          color: blue;
+      }
+      p.blueColor {
+          font-weight: bold;
+      }
+      .titleCenter {
+          text-align: center;
+      }
+    </style>    
+</head>
+
+<body>
+    <header>
+        <h1 id="headerTitle">My ZOO</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <section>
+
+        <img src="img/heroImage.png" width="100%" alt="Hero Image">
+
+    </section>
+
+    <br />
+
+    <section>
+
+        <h2>My video seciotn</h2>
+        <br />
+
+        <video width="600" controls>
+            <source src="img/video.mp4" type="video/mp4">
+        </video>
+
+    </section>
+
+    <article>
+        <h3 class="blueColor titleCenter">ZOO descriotion1</h3>
+
+        <p class="blueColor">The history of the Taipei Zoo can be traced back over 90 years. In 1914, when Taiwan was still under Japanese sovereignty, a Japanese man surnamed Oe established a private zoological garden in Yuan-shan in the northern suburbs of Taipei City.</p>
+        <p>The history of the Taipei Zoo can be traced back over 90 years. In 1914, when Taiwan was still under Japanese sovereignty, a Japanese man surnamed Oe established a private zoological garden in Yuan-shan in the northern suburbs of Taipei City.</p>
+    </article>
+    <br />
+    <hr />
+    <br />
+    <article>
+        <h3>ZOO descriotion2</h3>
+
+        <p>The history of the Taipei Zoo can be traced back over 90 years. In 1914, when Taiwan was still under Japanese sovereignty, a Japanese man surnamed Oe established a private zoological garden in Yuan-shan in the northern suburbs of Taipei City.</p>
+        <p class="blueColor">The history of the Taipei Zoo can be traced back over 90 years. In 1914, when Taiwan was still under Japanese sovereignty, a Japanese man surnamed Oe established a private zoological garden in Yuan-shan in the northern suburbs of Taipei City.</p>
+    </article>
+    <br />
+    <hr />
+    <br />
+    <section>
+        <table style="width: 100%; text-align: center">  <!-- inline css -->
+            <caption> My animals</caption>
+            <tr>
+                <th>Animals</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <th>Lion</th>
+                <th>36</th>
+            </tr>
+            <tr>
+                <th>Elephant</th>
+                <th>25</th>
+            </tr>
+        </table>
+    </section>
+    <br />
+    <hr />
+    <br />
+    <footer>
+        <form>
+            Email address:<br />
+            <input type="email" name="email" value="Email"><br />
+
+            Message:<br />
+            <textarea rows="4" cols="50">
+
+            </textarea><br /><br />
+        </form>
+
+        <p>&copy; 2019 jack_hung. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
