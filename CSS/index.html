@@ -12,28 +12,113 @@
         /* background-image: url(flag.png);
         background-repeat: no-repeat;
         background-position: right top; */
-        /* background: url(flag.png) no-repeat right top; */
-        background: yellow;
+        background: url(flag.png) no-repeat right top;
+        /* background: yellow; */
       }
       h1, p {
         color: black;
       }
       h1 {
-        background-color: rgba(75, 223, 148, 0.5);   /* rgb中的a是透明度ｋ */ /* ＃ff000 顏色 */
+        /* text-shadow: 3px 5px red;  向右 向下移動 */
+        letter-spacing: 5px;  /* 字母間距 */
+        word-spacing: 30px;  /* 單字間距 */
+        background-color: rgba(75, 223, 148, 0.5);   /* rgba中的a是透明度 */ /* ＃ff000 顏色 */
       }
       p {
+        max-width: 200px;
+        text-align: justify;
+        line-height: 1.5;
         background-color: tomato;
+      }
+      section {
+        /* width: 400px; */
+        /* width: 50%;  自動調整到網頁視窗的一半 */
+        /* max-width: 250px;最大寬度不超過300,可變動不同系統的畫面寬度 */
+        /* height: 100px;  去掉可以緊貼文字 */
+        background-color: orange;
+      }
+      .myBorder {
+        /* border-style: solid;  邊框
+        border-width: 1px 10px 5px 20px;  排序上右下左
+        border-width: 10px 5px;  排序上10/右5/下10/左5
+        border-color: tomato; */
+        border: 5px solid blue; 
+        /* margin-left: 100px;  間距
+        margin-top: 100px; */
+        /* margin: 100px 50px 200px 400px;  上右下左 */
+        /* margin: 100px 50px;  100px:上下 50px:左右 */
+        margin: auto;  /* 置中 */
+        /* (X) border: 5px 10xp solid blue;  不能設置兩個參數(5px 10px) */
+        /* border-radius: 20px; */
+        /* border-radius: 150px;  圓腳，150px是圓的半徑，就可以變成圓形 */
+      }
+
+      .myBorder1 {
+        /* border: 5px solid blue; */
+        /* margin-bottom: 50px; */
+        /* 不會把50px+60px變成110px，會取兩者的最大值 */
+        /* padding: 50px; */
+      }
+
+      .myBorder2 {
+        border: 5px solid blue;
+        margin-top: 60px;
+        box-sizing: border-box;  /* 固定section的範圍 */
+        /* 不會把50px+60px變成110px，會取兩者的最大值 */
+        padding: 50px;
+      }
+      .displayinline {
+        display: inline;  /* 強制把block改成inline */
+      }
+      .align {
+        max-width: 200px;
+        text-align: right;
+      }
+      a {
+        text-decoration: none;  /* 下滑線消失，其他文字也可以使用*/
+      }
+      .decoration {
+        text-decoration: overline;  /* 上滑線 */
+        text-decoration: line-through;  /* 中滑線 */
+        text-decoration: underline;  /* 下滑線 */
+      }
+      .redColor {
+        background-color: tomato;
+      }
+      .myPostion {
+        /* position: fixed;  跟隨著網頁的下拉持續在畫面最頂端，位置直接在頁面最上方 */
+        position: sticky;
+        /* 跟隨著網頁的下拉持續在畫面最頂端，位置在原本的位置不理會以下top跟left的設定，直到網頁下拉到section */
+        top: 0;
+        left: 8px:
       }
 
     </style>    
 </head>
 
 <body>
-<div>
+<div>  <!-- block的顯示方式 -->
     <h1>Example Domain</h1>
     <p>This domain is for use in illustrative examples in documents. You may use this
     domain in literature without prior coordination or asking for permission.</p>
-    <a href="https://www.iana.org/domains/example">More information...</a>
+    <section class="myBorder"></section>
+    <br/>
+    <br/>
+    <br/>
+    <section class="myBorder1 redColor myPostion">  <!-- 會被上一級的元素的顯示方式改變ｋ -->
+      That is a text1.
+    </section>
+    <section class="myBorder2 decoration">
+      <p class="align">That is a text2.</p>
+    </section>
+    <div style="padding-bottom: 2000px;"></div>
+    <a href="https://www.iana.org/domains/example">More information...</a>  <!-- inline的顯示方式 -->
+    <a href="https://www.iana.org/domains/example">More information...</a>  <!-- inline的顯示方式 -->
+    <a href="https://www.iana.org/domains/example">More information...</a>  <!-- inline的顯示方式 -->
+    <br/>
+    <li class="displayinline"><a href="#">Page1</a></li>  <!-- 透過上面css可以改變顯示方式 -->
+    <li class="displayinline"><a href="#">Page2</a></li>
+    <li><a href="#">Page3</a></li>  <!-- block的顯示方式 -->
 </div>
 </body>
 </html>
