@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Learning English</title>
+    <title>Learning CSS</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -87,10 +87,19 @@
       }
       .myPostion {
         /* position: fixed;  跟隨著網頁的下拉持續在畫面最頂端，位置直接在頁面最上方 */
-        position: sticky;
-        /* 跟隨著網頁的下拉持續在畫面最頂端，位置在原本的位置不理會以下top跟left的設定，直到網頁下拉到section */
+        /* position: sticky;  跟隨著網頁的下拉持續在畫面最頂端，位置在原本的位置不理會以下top跟left的設定，直到網頁下拉到section */
+        /* position: relative; 在原本的section的位置，向下/左/右移動多少px。 */
+        position: absolute; /* 是整張網頁的絕對位置 */
+        top: 0px;
+        left: 50px:
+      }
+      .relativePostion {
+        position: relative;
+      }
+      .absolutePostion {
+        position: absolute;
         top: 0;
-        left: 8px:
+        left: 50px:
       }
 
     </style>    
@@ -108,8 +117,11 @@
     <section class="myBorder1 redColor myPostion">  <!-- 會被上一級的元素的顯示方式改變ｋ -->
       That is a text1.
     </section>
-    <section class="myBorder2 decoration">
+    <section class="myBorder2 decoration relativePostion">
       <p class="align">That is a text2.</p>
+      <section class="myBorder1 redColor absolutePostion">  <!-- 會參考上一個section的位置ｋ -->
+        That is a text3.
+      </section>
     </section>
     <div style="padding-bottom: 2000px;"></div>
     <a href="https://www.iana.org/domains/example">More information...</a>  <!-- inline的顯示方式 -->
