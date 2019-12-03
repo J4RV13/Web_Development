@@ -41,14 +41,38 @@
       color: white;
       font-size: 50px;
     }
+    @keyframes myAnimation {
+      /* from {width: 500px;}
+      to {width: 200px;} */
+      0% {
+        width: 200px;
+        background-color: orange;
+      }
+      50% {
+        width: 500px;
+        background-color: tomato;
+      }
+      100% {
+        width: 50px;
+        background-color: mediumseagreen;
+      }
+    }
     .box2 {
       width: 200px;
       height: 200px;
       background-color: orange;
 
       /* float: right; */
-      margin: auto;  /* 顯示在中間的位置，但如果沒使用overflow會發現文字的外邊距超出邊框 */
+      /* margin: auto;  顯示在中間的位置，但如果沒使用overflow會發現文字的外邊距超出邊框 */
       overflow: auto;
+      float: left;
+      clear: left;
+
+      animation-name: myAnimation;
+      animation-duration: 8s;  /* 動畫運行時間 */
+      animation-delay: 1s;  /* 動畫延遲運行時間 */
+      animation-iteration-count: infinite;  /* 動畫運作次數 */
+      animation-direction: reverse;  /* 動畫運作方向 */
     }
     .img-container {
       width: 33.33%;
