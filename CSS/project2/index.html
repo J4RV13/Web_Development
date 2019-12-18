@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>My eBay</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      /*  ------------------------ Header ------------------------ */
+      body {
+        margin: 0;
+      }
+      header {
+        box-shadow: 0 3px 5px #cccccc;
+
+        padding: 9px 0;
+
+        position: relative;
+        z-index: 1;
+      }
+      .container {
+        width: 1200px;
+        margin: auto;
+      }
+      .navBar {
+        list-style-type: none;
+        font-size: 12px;
+
+        margin: 0;
+        padding: 0;
+      }
+      li.navItem {
+        display: inline;
+        border-right: 1px solid #777777;
+      }
+      li.navItem a {
+        padding: 0 9px;
+        color: #555555;
+      }
+      li.navItem a:link {
+        text-decoration: none;
+      }
+      li.navItem a:hover {
+        text-decoration: underline;
+        color: #0654ba;
+      }
+      #singin-style a:link {
+        color: #0654ba;
+        padding: 0;
+      }
+      #singin-style a:link:last-child {
+        padding-right: 16px;
+      }
+      .float-right {
+        float: right;
+      }
+      .no-border {
+        border-right: none !important;
+      }
+      #alert {   /* 圖片的尺寸要一致ｋ */
+        padding: 0 15px 0 25px;
+      }
+      #cart {    /* 圖片的尺寸要一致ｋ */
+        padding: 0 15px 0 25px;
+      }
+
+      /*  ------------------------ Search Form ------------------------  */
+      #search-bar {
+        width: 100%;
+        height: 65px;
+        overflow: hidden;
+      }
+      .setBGColor {
+        background-color: #f9f9f9;
+      }
+      .clearfix {
+        clear: both;
+      }
+      #brand {
+        float: left;
+      }
+      #shopping-button {
+        float: left;
+        width: 70px;
+        font-size: 14px;
+        color: #555555;
+        border: none;
+        background-color: #f9f9f9;
+        margin-right: 15px;
+      }
+      #arrow {
+        position: relative;
+        bottom: 40px;
+        left: 40px;
+        margin-left: 4px;
+      }
+      #search-form {
+        float: left;
+        margin-top: 10px;
+        margin-left: 15px;
+      }
+    </style>
+  
+</head>
+
+<body>
+  <!-- ------------------------ Header ------------------------ -->
+  <header>
+    <div class="container">
+      <ul class="navBar">
+        <li id="singin-style" class="navItem">Hi! <a href="#">Sign in</a> or <a href="#">register</a></li>
+        <li class="navItem"><a href="#">Daliy Deals</a></li>
+        <li class="navItem"><a href="#">Sell</a></li>
+        <li class="navItem no-border"><a href="#">Help & Contact</a></li>
+        <li id="cart" class="navItem float-right no-border"><img src="img/cart.png" alt="cart" title="您的購物車" width="20px"></li>
+        <li id="alert" class="navItem float-right no-border"><img src="img/alert.png" alt="alert" width="20px"></li>
+        <li class="navItem float-right no-border"><a href="#">My eBay</li>
+      </ul>
+    </div>
+  </header>
+  <!-- ------------------------ Search Form ------------------------ -->
+  <div id="search-bar" class="clearfix setBGColor">
+    <div class="container">
+      <img id="brand" src="img/brand.png" alt="eBay" height="55px">
+      <button id="shopping-button" type="button">
+        <p>Shop by category</p>
+        <img id="arrow" src="img/arrow.png" alt="arrow" width="13px">
+      </button>
+      <form id="search-form">
+        <table>
+          <tr>
+            <td>
+              <input id="search-field" type="text" name="search-content" placeholder="Search for anything">
+            </td>
+            <td>
+              <div id="category-textfield">
+                <select class="options" name="cate">
+                  <option selected="selected" value="0">All Category</option>
+                  <option value="1">Antiques</option>
+                  <option value="2">Art</option>
+                  <option value="3">Baby</option>
+                  <option value="4">Books</option>
+                  <option value="5">Business &amp; Industrial</option>
+                  <option value="6">Cameras &amp; Photo</option>
+                  <option value="7">Cell Phone &amp; Acceddories</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <input class="btn-primary" value="Search" type="submit">
+            </td>
+            <td>
+              <a href="#" id="advanced-button" title="高級搜索">Advanced</a>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
