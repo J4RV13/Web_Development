@@ -1,326 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
-    <title>My eBay</title>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      /*  ------------------------ Header ------------------------ */
-      body {
-        margin: 0;
-      }
-      header {
-        box-shadow: 0 3px 5px #cccccc;
-
-        padding: 9px 0;
-
-        position: relative;
-        z-index: 1;
-      }
-      .container {
-        width: 1265px;
-        margin: auto;
-      }
-      .navBar {
-        list-style-type: none;
-        font-size: 12px;
-
-        margin: 0;
-        padding: 0;
-      }
-      li.navItem {
-        display: inline;
-        border-right: 1px solid #777777;
-      }
-      li.navItem a {
-        padding: 0 9px;
-        color: #555555;
-      }
-      li.navItem a:link {
-        text-decoration: none;
-      }
-      li.navItem a:hover {
-        text-decoration: underline;
-        color: #0654ba;
-      }
-      #singin-style a:link {
-        color: #0654ba;
-        padding: 0;
-      }
-      #singin-style a:link:last-child {
-        padding-right: 16px;
-      }
-      .float-right {
-        float: right;
-      }
-      .no-border {
-        border-right: none !important;
-      }
-      #alert {   /* 圖片的尺寸要一致 */
-        padding: 0 15px 0 25px;
-      }
-      #cart {    /* 圖片的尺寸要一致 */
-        padding: 0 15px 0 25px;
-      }
-
-      /*  ------------------------ Search Form ------------------------  */
-      #search-bar {
-        width: 100%;
-        height: 65px;
-        overflow: hidden;
-      }
-      .setBGColor {
-        background-color: #f9f9f9;
-      }
-      .clearfix {
-        clear: both;
-      }
-      #brand {
-        float: left;
-      }
-      #shopping-button {
-        float: left;
-        width: 70px;
-        font-size: 14px;
-        color: #555555;
-        border: none;
-        background-color: #f9f9f9;
-        margin-right: 15px;
-      }
-      #arrow {
-        position: relative;
-        bottom: 40px;
-        left: 40px;
-        margin-left: 4px;
-      }
-      #search-form {
-        float: left;
-        margin-top: 10px;
-        margin-left: 15px;
-      }
-      #search-field {
-        border-radius: 3px 0 0 3px;
-        width: 630px;
-        height: 40px;
-        box-sizing: border-box;
-      }
-      .text-field {
-        font-size: 16px;
-        color: #767676;
-        padding: 10px 0 9px 8px;
-        border: 1px solid #ddd;
-      }
-      #category-textfield {
-        border-radius: 0 3px 3px 0;
-        padding: 11px 10px;
-        width: 180px;
-        height: 40px;
-        color: #fff;
-        box-sizing: border-box;
-        margin-left: -4px;
-      }
-      .options {
-        border: none;
-        font-size: 12px;
-        width: 100%;
-        background-color: transparent;
-      }
-      .btn-primary {
-        font-size: 16px;
-        height: 40px;
-        font-weight: 500;
-        border-radius: 3px;
-        border: 0;
-        color: #fff;
-        padding: 8px 12px 9px 12px;
-        background: linear-gradient(to bottom, #0079bc, #00509d);
-      }
-      .btn-primary:hover {
-        background: #00509d;
-      }
-      #advanced-button {
-        color: #555555;
-        text-decoration: none;
-        font-size: 13px;
-        margin-left: 10px;
-      }
-      #advanced-button:hover {
-        color: #065dba;
-      }
-      /* ------------------------ Navigation Bar ------------------------ */
-      nav {
-        width: 100%;
-        height: 35px;
-        padding-top: 12px;
-      }
-      .tb-border {
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-      }
-      #navigation-bar {
-        width: 100%;
-        padding: 10px 0 11px 0;
-        height: 35px;
-        box-sizing: border-box;
-      }
-      .li-space {
-        float: left;
-        padding: 0 1%;
-      }
-      .divider {
-        width: 1px;
-        height: 24px;
-        background-color: #ddd;
-        float: left;
-        margin: -5px 20px 0 20px;
-      }
-      .active a {
-        font-weight: bold;
-        border-bottom: 2px solid #555555;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
-        padding-bottom: 9px !important;
-      }
-      .active a:hover {
-        text-decoration: none !important;
-        color: #555 !important;
-      }
-      /* ------------------------ Advertisement ------------------------ */
-      #adSection {
-        height: 420px;
-        padding: 32px 0;
-      }
-      #column1 {
-        float: left;
-        height: 402px;
-      }
-      #column2 {
-        position: relative;
-        float: left;
-        height: 402px;
-        width: 324px;
-      }
-      .add-border {
-        border: 1px solid #ddd;
-        box-sizing: border-box;
-      }
-      #ad2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-      #ad3 {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
-      /* ------------------------ Product Section ------------------------ */
-      #productSection {
-        width: 100%;
-        height: 647px;
-        padding-bottom: 75px;
-        overflow: hidden;
-      }
-      .hero-heading {
-        height: 45px;
-        border-bottom: 1px solid #ddd;
-        font-weight: 400;
-        color: #555;
-      }
-      #show-product {
-        width: 100%;
-        height: 602.5px;
-      }
-      .product-section {
-        width: 585px;
-        height: 602.5px;
-        float: left;
-      }
-      .product-photo {
-        width: 585px;
-        height: 420px;
-      }
-      .product-column1 {
-        float: left;
-        width: 445px;
-        height: 420px;
-        border-width: 1px 0 1px 1px;
-        border-color: #ddd;
-        border-style: solid;
-        box-sizing: border-box;
-        overflow: hidden;
-      }
-      #photo1 {
-        height: 418px;    /* 不能跟邊框的大小一樣，不然圖片會蓋掉邊框 */
-        position: relative;
-        left: -100px;
-        overflow: hidden;
-      }
-      .product-column2 {
-        float: left;
-        width: 140px;
-        height: 420px;
-        box-sizing: border-box;
-        overflow: hidden;
-      }
-      .thumb {
-        width: 140px;
-        height: 140px;
-        border-width: 1px 1px 0 1px;
-        border-color: #ddd;
-        border-style: solid;
-        box-sizing: border-box;
-        overflow: hidden;
-      }
-      .thumb:last-child {
-        border-width: 1px 1px 1px 1px;
-      }
-      .thumbnail {
-        height: 140px;
-      }
-      #thumbnail-fix {
-        position: relative;
-        right: 20px;    /* = left: -20px; */
-      }
-      /* ------------------------ Article ------------------------ */
-      #article {
-        color: #333333;
-
-      }
-      .title {
-        font-weight: 400;
-        font-size: 26px;
-        margin: 18px 0 10px 0;
-      }
-      .description-container {
-        width: 370px;
-        height: 118px;
-      }
-      .product-details {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1.5em;   /* 0.5em是半個字的高度 */
-      }
-      .read-more {
-        background-image: url("img/readmore.png");
-        /* TODO 12/25: Find the photo. */
-        width: 28px;
-        height: 28px;
-        display: inline-block;    /* span是inline，圖片是block */
-        background-size: cover;
-        vertical-align: middle;
-      }
-      .left-col {
-        float: left;
-        width: 440px;
-      }
-      .right-col {
-        float: right;
-        width: 140px;
-      }
-    </style>
-  
+  <title>My eBay</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -417,24 +101,21 @@
     <div class="container">
       <h2 class="hero-heading">Today's Featured Collections</h2>
       <div id="show-product">
+        <!-- ------------------------ Product 1 ------------------------ -->
         <div class="product-section">
           <div class="product-photo">
             <div class="product-column1">
               <img id="photo1" src="img/product1.jpg" alt="product1">
-              <!-- TODO 12/25: Find the photo. -->
             </div>
             <div class="product-column2">
               <div class="thumb">
-                <img id="thumbnail-fix" class="thumbnail" src="img/thumbnail1_1.jpg" alt="thumbnail1_1">
-                <!-- TODO 12/25: Find the photo. -->
+                <img class="thumbnail" src="img/thumbnail1_1.jpg" alt="thumbnail1_1">
               </div>
               <div class="thumb">
                 <img class="thumbnail" src="img/thumbnail1_2.jpg" alt="thumbnail1_2">
-                <!-- TODO 12/25: Find the photo. -->
               </div>
               <div class="thumb">
-                <img class="thumbnail" src="img/thumbnail1_3.jpg" alt="thumbnail1_3">
-                <!-- TODO 12/25: Find the photo. -->
+                <img id="thumbnail-fix" class="thumbnail" src="img/thumbnail1_3.jpg" alt="thumbnail1_3">
               </div>
             </div>
           </div>
@@ -460,9 +141,116 @@
             </div>
           </article>
         </div>
+        <!-- ------------------------ Product 1 END ------------------------ -->
+        <!-- ------------------------ Product 2 ------------------------ -->
+        <div class="product-section right-section">
+          <div class="product-photo">
+            <div class="product-column1">
+              <img id="photo2" src="img/product2.jpg" alt="product2">
+              <!-- TODO 12/27 Find the photo and fix the postion -->
+            </div>
+            <div class="product-column2">
+              <div class="thumb">
+                <img class="thumbnail" src="img/thumbnail2_1.jpg" alt="thumbnail2_1">
+                <!-- TODO 12/27 Find the photo and fix the postion -->
+              </div>
+              <div class="thumb">
+                <img class="thumbnail" src="img/thumbnail2_2.jpg" alt="thumbnail2_2">
+                <!-- TODO 12/27 Find the photo and fix the postion -->
+              </div>
+              <div class="thumb">
+                <img id="thumbnail-fix" class="thumbnail" src="img/thumbnail2_3.jpg" alt="thumbnail2_3">
+                <!-- TODO 12/27 Find the photo and fix the postion -->
+              </div>
+            </div>
+          </div>
+          <!-- ------------------------ Article ------------------------ -->
+          <article>
+            <div class="left-col">
+              <h3 class="title">Culinary Cuteness</h3>
+              <div class="description-container">
+                <p class="product-details">
+                  It was a huge change in our lives just to do something completely different,” Sara said. “We had no idea what was going to happen — it was incredible.
+                  <a href="#" title="閱讀更多">
+                    <span class="read-more"></span>     <!-- span是inline，但是圖片都是用block顯示 -->
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="right-col right-col-text">
+              <ul class="right-col-container">
+                <li class="right-col-item">15 items</li>
+                <li class="right-col-item">by ebaytecheditor</li>
+                <li class="right-col-item"><a class="active-link" href="#">Shop now</a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <!-- ------------------------ Product 2 END ------------------------ -->
       </div>
     </div>
   </section>
+  <!-- ------------------------ Daily Deals ------------------------ -->
+  <section id="daily-deals" class="clearfix setBGColor">
+    <div class="container">
+      <h2 class="hero-heading">Daily Deals</h2>
+      <div class="box">
+        <div class="box-subcontent">
+          <img class="sale" src="img/1.jpg" alt="sale-pic">
+          <a href="#" class="details">Dyson SV07 V6 HEPA Cordiess Vacuum | Whi...</a>
+          <h4 class="price">HKD 431.63</h4>
+        </div>
+        <div class="box-subcontent">
+          <img class="sale" src="img/2.jpg" alt="sale-pic">
+          <!-- TODO 12/27 Find the photo and fix the postion -->
+          <a href="#" class="details">Dyson SV07 V6 HEPA Cordiess Vacuum | Whi...</a>
+          <h4 class="price">HKD 431.63</h4>
+        </div>
+        <div class="box-subcontent">
+          <img class="sale" src="img/3.jpg" alt="sale-pic">
+          <!-- TODO 12/27 Find the photo and fix the postion -->
+          <a href="#" class="details">Dyson SV07 V6 HEPA Cordiess Vacuum | Whi...</a>
+          <h4 class="price">HKD 431.63</h4>
+        </div>
+        <div class="box-subcontent">
+          <img class="sale" src="img/4.jpg" alt="sale-pic">
+          <!-- TODO 12/27 Find the photo and fix the postion -->
+          <a href="#" class="details">Dyson SV07 V6 HEPA Cordiess Vacuum | Whi...</a>
+          <h4 class="price">HKD 431.63</h4>
+        </div>
+        <div class="box-subcontent">
+          <img class="sale" src="img/5.jpg" alt="sale-pic">
+          <!-- TODO 12/27 Find the photo and fix the postion -->
+          <a href="#" class="details">Dyson SV07 V6 HEPA Cordiess Vacuum | Whi...</a>
+          <h4 class="price">HKD 431.63</h4>
+        </div>
+        <!-- ------------------------ Pagonation ------------------------ -->
+        <div class="pagonation clearfix">
+          <div class="pagonation-content">
+            <a href="#">〈</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#" class="active">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">〉</a>
+          </div>
+        </div>
+      </div>
+      <!-- ------------------------ Collections ------------------------ -->
+      <div id="collections">
+        <p>Get inspired! Explore all of our <a href="#">Trending Collections</a></p>
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------ Footer ------------------------ -->
+  <footer>
+    <div class="container">
+      <div style="float: right;">
+        <p>&copy; 2019 版權 jack_hung</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
 
