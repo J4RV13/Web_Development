@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <title>Learning JavaScript</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    #circle {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <button onclick="alert('您好!')">點按我!</button>
+  <button id="myButton">點按我!</button>
+  <p id="text">原來的一段文字</p>
+  <br><br>
+
+  <button id="myButton1">點按我!</button>
+  <p id="text1">我想添加:</p>
+  <br><br>
+
+  <button id="myButton2">點按我!</button>
+  <p id="text2"></p>
+  <br><br> -->
+
+  <div id="circle"></div>
+  <script type="text/javascript">
+    // alert(document.getElementById("text").innerHTML);
+    // document.getElementById("text").innerHTML = "修改後的文字";     // 可以找到並修改元素內的內容
+    // document.getElementById("myButton").onclick = function() {
+    //   alert("您 好!");
+    //   document.getElementById("text").innerHTML = "新的一段文字";
+    // }
+    // document.getElementById("myButton1").onclick = function() {
+    //   alert("您 好!");
+    //   document.getElementById("text1").innerHTML = document.getElementById("text1").innerHTML + "一段文字";
+    // }
+    // document.getElementById("myButton2").onclick = function() {
+    //   alert("您 好!");
+    //   document.getElementById("text2").innerHTML = "<ul><li>蘋果</li><li>香蕉</li><li>西瓜</li></ul>";
+    // }
+    document.getElementById("circle").onclick = function() {
+      document.getElementById("circle").style.display = "none";
+    }
+  </script>
+</body>
+</html>
+
