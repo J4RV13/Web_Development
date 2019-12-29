@@ -10,41 +10,26 @@
 </head>
 
 <body>
-  <p>請猜猜一個從0到10的整數</p>
+  <p>請猜猜從0的10的整數</p>
   <input id="myInput" type="text" value=""/>
   <button id="myButton">提交</button>
 
   <script type="text/javascript">
-    // var myArray = ["pizza", "chocolate"];
-    // myArray.push("apple");
-    // console.log(myArray);
-    // myArray.splice(1, 0, "orange");   /// splice不是真的刪除/增加array的值
-    // console.log(myArray);
-    // var myVariable = document.getElementById("myInput").value;
-    // document.getElementById("myButton").onclick = function() {
-    //   myVariable = document.getElementById("myInput").value;
-    //   document.getElementById("text").innerHTML = myArray[0];
-    // }
-    // document.getElementById("myButton").onclick = function() {
-    //   if (document.getElementById("myInput").value == "下雨") {
-    //     alert("今天下雨!");
-    //   } else {
-    //     alert("今天沒下雨!")
-    //   }
-    // }
-    // var x = 2;
-    // console.log(Math.pow(x, 3));    /// X數字的3次方
-
     document.getElementById("myButton").onclick = function() {
-      var x = Math.random();
-      x *= 11;
-      x = Math.floor(x);
-      console.log(x);
-      if (x == document.getElementById("myInput").value) {
-        alert("恭喜 猜對了!");
-      } else {
-        alert("您猜錯了，這個數字是" + x);
+      var gotIt = false;
+      var guesses = 1;
+      var x;
+      while (gotIt == false) {
+        x = Math.random();
+        x *= 11;
+        x = Math.floor(x);
+        if (x == document.getElementById("myInput").value) {
+          gotIt = true;
+        } else {
+          guesses++;
+        }
       }
+      alert("恭喜，瀏覽器用了" + guesses + "遍，猜對了，這個隨機數是" + x + "。");
     }
   </script>
 </body>
