@@ -5,49 +5,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    #circle {
-      width: 200px;
-      height: 200px;
-      background-color: red;
-      border-radius: 100px;
-    }
+
   </style>
 </head>
 
 <body>
-  <!-- <button onclick="alert('您好!')">點按我!</button>
-  <button id="myButton">點按我!</button>
-  <p id="text">原來的一段文字</p>
-  <br><br>
+  <p>請猜猜一個從0到10的整數</p>
+  <input id="myInput" type="text" value=""/>
+  <button id="myButton">提交</button>
 
-  <button id="myButton1">點按我!</button>
-  <p id="text1">我想添加:</p>
-  <br><br>
-
-  <button id="myButton2">點按我!</button>
-  <p id="text2"></p>
-  <br><br> -->
-
-  <div id="circle"></div>
   <script type="text/javascript">
-    // alert(document.getElementById("text").innerHTML);
-    // document.getElementById("text").innerHTML = "修改後的文字";     // 可以找到並修改元素內的內容
+    // var myArray = ["pizza", "chocolate"];
+    // myArray.push("apple");
+    // console.log(myArray);
+    // myArray.splice(1, 0, "orange");   /// splice不是真的刪除/增加array的值
+    // console.log(myArray);
+    // var myVariable = document.getElementById("myInput").value;
     // document.getElementById("myButton").onclick = function() {
-    //   alert("您 好!");
-    //   document.getElementById("text").innerHTML = "新的一段文字";
+    //   myVariable = document.getElementById("myInput").value;
+    //   document.getElementById("text").innerHTML = myArray[0];
     // }
-    // document.getElementById("myButton1").onclick = function() {
-    //   alert("您 好!");
-    //   document.getElementById("text1").innerHTML = document.getElementById("text1").innerHTML + "一段文字";
+    // document.getElementById("myButton").onclick = function() {
+    //   if (document.getElementById("myInput").value == "下雨") {
+    //     alert("今天下雨!");
+    //   } else {
+    //     alert("今天沒下雨!")
+    //   }
     // }
-    // document.getElementById("myButton2").onclick = function() {
-    //   alert("您 好!");
-    //   document.getElementById("text2").innerHTML = "<ul><li>蘋果</li><li>香蕉</li><li>西瓜</li></ul>";
-    // }
-    document.getElementById("circle").onclick = function() {
-      document.getElementById("circle").style.display = "none";
+    // var x = 2;
+    // console.log(Math.pow(x, 3));    /// X數字的3次方
+
+    document.getElementById("myButton").onclick = function() {
+      var x = Math.random();
+      x *= 11;
+      x = Math.floor(x);
+      console.log(x);
+      if (x == document.getElementById("myInput").value) {
+        alert("恭喜 猜對了!");
+      } else {
+        alert("您猜錯了，這個數字是" + x);
+      }
     }
   </script>
 </body>
 </html>
-
