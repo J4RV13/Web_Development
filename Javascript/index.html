@@ -10,27 +10,13 @@
 </head>
 
 <body>
-  <p>請猜猜從0的10的整數</p>
-  <input id="myInput" type="text" value=""/>
-  <button id="myButton">提交</button>
+  <p id="paragraph"></p>
 
   <script type="text/javascript">
-    document.getElementById("myButton").onclick = function() {
-      var gotIt = false;
-      var guesses = 1;
-      var x;
-      while (gotIt == false) {
-        x = Math.random();
-        x *= 11;
-        x = Math.floor(x);
-        if (x == document.getElementById("myInput").value) {
-          gotIt = true;
-        } else {
-          guesses++;
-        }
-      }
-      alert("恭喜，瀏覽器用了" + guesses + "遍，猜對了，這個隨機數是" + x + "。");
+    function alertMe(a, b) {
+      return (a + b);
     }
+    document.getElementById("paragraph").innerHTML = alertMe(6, 3);
   </script>
 </body>
 </html>
