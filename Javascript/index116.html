@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <title>css nth 元素</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* 計算所有元素的行數 */
+    /* p:nth-child(odd) {
+      background-color: red;
+      color: white;
+    } */
+    p:nth-of-type(odd) {    /* 只會計算P元素的行數 */
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <p>第1行</p>
+  <hr>
+  <p>第2行</p>
+  <hr>
+  <p>第3行</p>
+  <hr>
+  <p>第4行</p>
+  <hr>
+  <p>第5行</p>
+  <hr>
+  <p>第6行</p>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+</html>
