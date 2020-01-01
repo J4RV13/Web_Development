@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <title>Learning jQuery</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <style>
+    #circle {
+      width: 200px;
+      height: 200px;
+      background-color: #A7568B;
+      border-radius: 50%;
+    }
+    .square {
+      width: 200px;
+      height: 200px;
+      background-color: #E86D5E;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="circle"></div>
+  <!-- <div class="square"></div>
+  <div class="square"></div> -->
+  <button id="b1">disapear</button>
+  <button id="b2">show</button>
+
+  <!-- <p>This is a word.</p> -->
+
+  <!-- <iframe width="800" height="600"src="https://www.google.com"></iframe> -->
+  <script type="text/javascript">
+    // $("#circle").click(function() {
+    //   $("p").html("This is a world");
+    //   alert($("p").html());
+    //   alert($("iframe").attr("src"));
+    // });
+    // $("#circle").hover(function() {
+    //   alert($("p").html());
+    // });
+    // $("#circle").click(function() {
+    //   $("#circle").css("width", "400px");
+    // });
+    // $("div").click(function() {
+    //   $(this).css("width", "400px");
+    // });
+    // $("#circle").click(function() {
+    //   // $(".square").css("display", "none"); == $(".square").hide();
+    // });
+    $("#circle").click(function() {
+      $(this).animate({
+        /// css style
+        width: "400px",
+        height: "500px",
+        marginLeft: "300px"     /// margin"-l"eft -> margin"L"eft
+      }, 1500);
+    });
+    $("#b1").click(function() {
+      // $("#circle").fadeOut("slow");   /// 3000m sec / "slow" / "faster"
+      $("#circle").fadeOut(3000, function(){
+        alert("disapear the motion.")
+      });
+    });
+    $("#b2").click(function() {
+      $("#circle").fadeIn();
+    });
+
+    /// AJAX (Asynchronous JavaScript and XML)
+  </script>
+</body>
+</html>

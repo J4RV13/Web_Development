@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <title>Learning AJAX</title>
+  <!-- AJAX應用可以僅向伺服器傳送並取回必須的資料，並在客戶端採用JavaScript處理來自伺服器的回應 -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <button>Submit</button>
+  <p id="result"></p>
+
+  <script type="text/javascript">
+    // $.get("test.html", function(data) {
+    //   alert(data);
+    // });
+    $.ajax({
+      url: "test.html"
+    }).done(function(data) {
+
+    });
+    $(document).ready(function() {
+      $("button").click(function() {
+        $.get("test.html", function(data, status) {
+          // alert(data);
+          $("#result").html(data);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

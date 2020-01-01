@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <title>Regular Expression</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+  /// 有區分大小寫，有加i就不區分大小寫，加g是把有符合的字都找出來
+    // var string = "Hello jack";
+    // var regex = /Jack/i;
+    var string = "Hello jake";
+    var regex = /e/g;
+    var result = string.match(regex);
+    alert(result);
+  </script>
+</body>
+</html>
