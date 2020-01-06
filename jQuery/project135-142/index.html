@@ -68,7 +68,7 @@
       </select>
 
       <label for="password-1">Password: </label>
-      <input id="password" class="input-style input-width" type="password" name="password1" placeholder="Please enter your password.">
+      <input id="password-1" class="input-style input-width" type="password" name="password1" placeholder="Please enter your password.">
       <label for="password-2">Confirm Password: </label>
       <input id="password-2" class="input-style input-width" type="password" name="password2" placeholder="Please confirm your password.">
 
@@ -80,7 +80,38 @@
   </div>
 
   <script type="text/javascript">
+    
+    $("#validationForm").submit(function(event) {
+      var errorMessage = "";
+      event.preventDefault();
 
+      var name = $("#email-name").val();
+      var email = $("#email-address").val();
+      var password1 = $("#password-1").val();
+      var password2 = $("#password-2").val();
+      var message = $("#mail-message").val();
+
+      function isValidEmailAddress(emailAddress) {
+        var pattern = /^\b[A-Z0-9-]+@[A-Z0-9]+\.com\b/i;    /// https://onlinerandomtools.com/generate-random-data-from-regexp
+        return pattern.test(emailAddress);
+      }
+
+      if (name == "" || email == "" || password1 == "" || password2 == "" || message == "") {
+        errorMessage = "Please enter the complete information.";
+      } else if (!isValidEmailAddress(email)) {
+        errorMessage = "Please enter the correct Email Address.";
+      } else if (password1 != password2) {
+        errorMessage = "Please check your password.";
+      }
+
+      if (errorMessage == "") {
+        $("#error").html("Send the mail!.");
+        $("#error").css("color", "green");
+      } else {
+        $("#error").html(errorMessage);
+        $("#error").css("color", "red");
+      }
+    });
   </script>
 </body>
 </html>

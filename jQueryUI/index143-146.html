@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <title>Learning jQuery UI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+    #square {
+      width: 200px;
+      height: 200px;
+      background-color:#E86D5E;
+    }
+    #resizable {
+      width: 300px;
+      height: 300px;
+      background-color:#A6BED1;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="square"></div>
+  <div id="resizable"></div>
+  <script type="text/javascript">
+    $("#square").draggable();
+    // $("#resizable").resizable();  /// Need to add css of jquery ui. Ues resizable element will put the item on top. 
+    $("#resizable").droppable({
+      drop: function(event, ui) {
+        // alert("Dropped!");
+        $(this).addClass("ui-state-highlight");   /// Use elements from css of jquery ui.
+      }
+    })
+  </script>
+</body>
+</html>
