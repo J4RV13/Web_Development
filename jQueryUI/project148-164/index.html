@@ -166,7 +166,7 @@
   <div class="clear"></div>
   <div id="result-container">
     <h2>Result</h2>
-    <iframe></iframe>
+    <iframe id="result-frame"></iframe>
   </div>
   <div class="footer"></div>
 
@@ -174,6 +174,12 @@
     $(".code-container").hide();
     $("#css-code").css("margin-left", "-350px");
     $("#js-code").css("margin-left", "-350px");
+
+    var $result = $("#result-frame");
+    var $window = $(window).on("resize", function() {
+      var height = $(this).height() - 530;    // 530 = 60(menu) + 400(accordion) + 30(h2) + 40(footer);
+      $result.height(height);
+    }).trigger("resize");
 
     $(".tab").click(function(event) {
       $(this).nextAll(".tab").css("margin-left", "-170px");
@@ -205,6 +211,12 @@
           {duration: 2000, queue: false}
         );
       }
+    });
+    $("#runCode").click(function() {
+      $("#result-frame").contents().find("head").html("<style>" + $("textarea#css-code").val() + "</style>");
+      $("#result-frame").contents().find("body").html($("textarea#html-code").val());
+
+      document.getElementById("result-frame").contentWindow.eval($("textarea#js-code").val());
     });
   </script>
 </body>
