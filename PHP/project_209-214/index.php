@@ -46,8 +46,14 @@
       width: 522px;
       height: 40px;
     }
-    #error {
+    .form-error {
       color: red;
+    }
+    .form-success {
+      color: green;
+    }
+    .input-error {
+      box-shadow: 0 0 5px red;
     }
   </style>
 </head>
@@ -82,7 +88,7 @@
   <script type="text/javascript">
     
     $("#validationForm").submit(function(event) {
-    //   event.preventDefault();
+      event.preventDefault();
 
       var name = $("#email-name").val();
       var email = $("#email-address").val();
